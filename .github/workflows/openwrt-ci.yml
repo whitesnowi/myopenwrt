@@ -6918,7 +6918,7 @@ jobs:
 
       - name: Compile firmware
         run: |
-          make -j$(nproc) || make -j1 V=s
+          make -j$(nproc) || make -j4 V=s
           echo "======================="
           echo "Space usage:"
           echo "======================="
@@ -6959,7 +6959,7 @@ jobs:
         if: github.event == 'release'
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.YOURTOKEN }}
+          repo_token: ${{ secrets.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 }}
           file: ./artifact/firmware/*
           tag: ${{ github.ref }}
           file_glob: true
